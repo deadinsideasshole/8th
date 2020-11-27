@@ -11,10 +11,8 @@
 #include <boost/lexical_cast.hpp>
 #include <cstdlib>
 #include <iostream>
-#include <nlohmann/json.hpp>
 #include <string>
 
-using nlohmann::json;
 namespace beast = boost::beast;  // from <boost/beast.hpp>
 namespace http = beast::http;    // from <boost/beast/http.hpp>
 namespace net = boost::asio;     // from <boost/asio.hpp>
@@ -22,7 +20,7 @@ using tcp = net::ip::tcp;
 
 class Client {
  public:
-  Client(int argc, char **argv);
+  Client(int num, char **param);
   int clientRequest();
 
  private:

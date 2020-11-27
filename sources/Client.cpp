@@ -2,9 +2,9 @@
 
 #include "Client.hpp"
 
-Client::Client(int argc, char **argv) {
-  this->argc = argc;
-  this->argv = argv;
+Client::Client(int num, char **param) {
+  argc = num;
+  argv = param;
 }
 
 int Client::clientRequest() {

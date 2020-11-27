@@ -27,14 +27,11 @@ string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
-hunter_add_package(Boost COMPONENTS system thread)
-find_package(Boost CONFIG REQUIRED system thread)
+hunter_add_package(Boost COMPONENTS system)
+find_package(Boost CONFIG REQUIRED system)
 
 hunter_add_package(Beast)
 find_package(Beast CONFIG REQUIRED)
-
-hunter_add_package(nlohmann_json)
-find_package(nlohmann_json CONFIG REQUIRED)
 
 # TODO: change template word to project name and delete this comment
 add_library(template STATIC
@@ -66,21 +63,15 @@ target_include_directories(main
 target_link_libraries(template
         GTest::gtest_main
         Beast::Beast
-        Boost::system
-        Boost::thread
-        nlohmann_json::nlohmann_json)
+        Boost::system)
 target_link_libraries(tests
         Beast::Beast
         Boost::system
-        Boost::thread
         GTest::gtest_main
-        nlohmann_json::nlohmann_json
         template)
 target_link_libraries(main
         Beast::Beast
         Boost::system
-        Boost::thread
-        nlohmann_json::nlohmann_json
         template)
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
