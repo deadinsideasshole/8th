@@ -1,7 +1,7 @@
 // Copyright 2020 Dolbnin Mikhail dolbnin@protonmail.com
 
-#ifndef TEMPLATE_CLIENT_HPP
-#define TEMPLATE_CLIENT_HPP
+#ifndef INCLUDE_CLIENT_HPP_
+#define INCLUDE_CLIENT_HPP_
 
 #include <boost/asio/connect.hpp>
 #include <boost/asio/ip/tcp.hpp>
@@ -30,4 +30,4 @@ class Client {
   char **argv;
 };
 
-#endif  // TEMPLATE_CLIENT_HPP
+#endif  // INCLUDE_CLIENT_HPP_
