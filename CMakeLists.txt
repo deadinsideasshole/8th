@@ -27,15 +27,27 @@ string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
+hunter_add_package(Boost COMPONENTS system)
+find_package(Boost CONFIG REQUIRED system)
+
+hunter_add_package(Beast)
+find_package(Beast CONFIG REQUIRED)
+
 # TODO: change template word to project name and delete this comment
 add_library(template STATIC
   # enum your files and delete this comment
-  ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp
-)
+  ${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp
+        sources/Client.cpp
+        include/Client.hpp)
 add_executable(tests
   # TODO: enum your files and delete this comment
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
-)
+        sources/Client.cpp
+        include/Client.hpp)
+add_executable(main
+        ${CMAKE_CURRENT_SOURCE_DIR}/sources/main.cpp
+        sources/Client.cpp
+        include/Client.hpp)
 
 # TODO: change template word to project name and delete this comment
 target_include_directories(template
@@ -44,9 +56,23 @@ target_include_directories(template
 target_include_directories(tests
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+target_include_directories(main
+        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+        )
 # TODO: change template word to project name and delete this comment
-target_link_libraries(tests GTest::gtest_main template)
-
+target_link_libraries(template
+        GTest::gtest_main
+        Beast::Beast
+        Boost::system)
+target_link_libraries(tests
+        Beast::Beast
+        Boost::system
+        GTest::gtest_main
+        template)
+target_link_libraries(main
+        Beast::Beast
+        Boost::system
+        template)
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
 
