@@ -1,7 +1,7 @@
-// Copyright 2020 Dolbnin Mikhail dolbnin@protonmail.com
+// Copyright 2020 ivan <ikhonyak@gmail.com>
 
 #include "Client.hpp"
-
+//FFF
 Client::Client(int num, char **param) {
   argc = num;
   argv = param;
@@ -10,8 +10,8 @@ Client::Client(int num, char **param) {
 int Client::clientRequest() {
   try {
     if (argc != 5 && argc != 6) {
-      std::cerr
-          << "Usage: <host> <port> <target> <HTTP version: 1.1(default)>\n";
+      std::cerr << "Usage: <host> <port> <target> <data> <HTTP version: "
+                   "1.1(default)>\n";
       return EXIT_FAILURE;
     }
     auto const host = argv[1];

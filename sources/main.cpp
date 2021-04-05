@@ -1,4 +1,4 @@
-// Copyright 2020 Dolbnin Mikhail dolbnin@protonmail.com
+// Copyright 2020 ivan <ikhonyak@gmail.com>
 
 #include <Client.hpp>
 

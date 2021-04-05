@@ -1,4 +1,4 @@
-// Copyright 2020 Dolbnin Mikhail dolbnin@protonmail.com
+// Copyright 2020 ivan <ikhonyak@gmail.com>
 
 #ifndef INCLUDE_CLIENT_HPP_
 #define INCLUDE_CLIENT_HPP_
@@ -13,9 +13,9 @@
 #include <iostream>
 #include <string>
 
-namespace beast = boost::beast;  // from <boost/beast.hpp>
-namespace http = beast::http;    // from <boost/beast/http.hpp>
-namespace net = boost::asio;     // from <boost/asio.hpp>
+namespace beast = boost::beast;
+namespace http = beast::http;
+namespace net = boost::asio;
 using tcp = net::ip::tcp;
 
 class Client {
