@@ -1,4 +1,4 @@
-// Copyright 2020 ivan <ikhonyak@gmail.com>
+// Copyright 2021 roman <roman.sekin.90@mail.ru>
 
 #include <Client.hpp>
 

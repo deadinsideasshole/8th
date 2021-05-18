@@ -1,4 +1,4 @@
-// Copyright 2020 ivan <ikhonyak@gmail.com>
+// Copyright 2021 Roman <roman.sekin.90@mail.ru>
 
 #ifndef INCLUDE_CLIENT_HPP_
 #define INCLUDE_CLIENT_HPP_
